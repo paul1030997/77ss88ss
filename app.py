@@ -1,6 +1,7 @@
 from flask import Flask, request, abort
 from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
+from linebot.models import TextSendMessage
 from linebot.models import *
 import os
 import requests, json
@@ -35,7 +36,7 @@ def testapi():
       print(msg_data)
       # 如果有 msg 參數，觸發 LINE Message API 的 push_message 方法
       line_bot_api.push_message(user , TextSendMessage(text=msg_data))
-      return msg
+      return 'OK'
     else:
       return 'OK'
   except:
