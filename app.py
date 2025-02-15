@@ -35,7 +35,7 @@ def testapi():
       msg_data = msg.decode("utf-8")
       print(msg_data)
       # 如果有 msg 參數，觸發 LINE Message API 的 push_message 方法
-      line_bot_api.push_message(user , TextSendMessage(text=msg_data))
+      line_bot_api.push_message("U397f1de6d94d4f1ecd7ac45174f4ef8d" , TextSendMessage(text="hello"))
       return 'OK'
     else:
       return 'OK'
